@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ListProgress.css';
+import SideBar from '../../Components/SideBar/SideBar'
 
 const students = [
   { id: 1, name: '1 Nguyen Van A', course: 'ReactJS Basics', progress: '80%', avatar: 'avatar1.jpg' },
@@ -20,7 +21,7 @@ const students = [
 const StudentList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
-  
+
   const handlePageChange = (direction) => {
     setCurrentPage((prevPage) =>
       direction === 'next' ? prevPage + 1 : Math.max(prevPage - 1, 1)
@@ -33,35 +34,39 @@ const StudentList = () => {
   );
 
   return (
-    <div className="student-list">
-      <h2 className="title">Tiến Độ Học Tập</h2>
-      <div className="student-items">
-        {paginatedStudents.map((student) => (
-          <div className="student-item" key={student.id}>
-            <img src={student.avatar} alt={student.name} className="student-avatar" />
-            <div className="student-info">
-              <h3 className="student-name">{student.name}</h3>
-              <p className="student-course">{student.course}</p>
-              <p className="student-progress">Tiến độ: {student.progress}</p>
+    <div className='student-progress-list-container'>
+      <SideBar/>
+      <div className="student-list">
+        <h2 className="title">Tiến Độ Học Tập</h2>
+        <div className="student-items">
+          {paginatedStudents.map((student) => (
+            <div className="student-item" key={student.id}>
+              <img src={student.avatar} alt={student.name} className="student-avatar" />
+              <div className="student-info">
+                <h3 className="student-name">{student.name}</h3>
+                <p className="student-course">{student.course}</p>
+                <p className="student-progress">Tiến độ: {student.progress}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="pagination">
-        <button 
-          onClick={() => handlePageChange('prev')} 
-          disabled={currentPage === 1}
-        >
-          Trước
-        </button>
-        <button 
-          onClick={() => handlePageChange('next')} 
-          disabled={currentPage * itemsPerPage >= students.length}
-        >
-          Tiếp
-        </button>
+          ))}
+        </div>
+        <div className="pagination">
+          <button
+            onClick={() => handlePageChange('prev')}
+            disabled={currentPage === 1}
+          >
+            Trước
+          </button>
+          <button
+            onClick={() => handlePageChange('next')}
+            disabled={currentPage * itemsPerPage >= students.length}
+          >
+            Tiếp
+          </button>
+        </div>
       </div>
     </div>
+
   );
 };
 
