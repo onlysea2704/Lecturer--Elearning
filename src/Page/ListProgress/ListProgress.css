@@ -1,0 +1,81 @@
+.student-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: darkblue;
+  }
+  
+  .student-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .student-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: white;
+  }
+  
+  .student-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .student-info {
+    text-align: left;
+  }
+  
+  .student-name {
+    font-size: 18px;
+    margin: 0;
+    color: darkblue;
+  }
+  
+  .student-course, .student-progress {
+    font-size: 14px;
+    margin: 5px 0;
+    color: gray;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkblue;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination button:hover {
+    background-color: navy;
+  }
+  
+  .pagination button:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+  }
+  
