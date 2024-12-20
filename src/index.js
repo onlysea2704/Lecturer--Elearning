@@ -7,10 +7,13 @@ import StudentContextProvider from './Context/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // <StudentContextProvider>
+  //   <React.StrictMode>
+  //     <App />
+  //   </React.StrictMode>
+  // </StudentContextProvider>
   <StudentContextProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <App />
   </StudentContextProvider>
 );
 
